@@ -10,10 +10,10 @@ object CaesarCipher extends App {
     val shift = readInt()
 
     val encrypt=(c:Char,key:Int,a:String)=>
-        a((a.indexOf(c.toUpper)+key)%a.size)
+        a((a.indexOf(c.toUpper)+key+a.size)%a.size)
 
     val decrypt=(c:Char,key:Int,a:String)=>
-        a((a.indexOf(c.toUpper)-key)%a.size)
+        a((a.indexOf(c.toUpper)-key+a.size)%a.size)
 
     val cipher = (algo:(Char, Int, String) =>
     Char, s:String, key:Int, a:String) =>
